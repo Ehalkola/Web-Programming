@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Selection</title>
+<style>
+  /* CSS styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  select, input {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #product-details {
+    display: none;
+  }
+
+  #product-details input[type="text"] {
+    display: block;
+  }
+
+  #product-details input[type="number"] {
+    display: block;
+    width: 100px;
+  }
+
+  #product-details p {
+    margin-bottom: 5px;
+  }
+
+  #save-btn {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>Select a Product</h2>
+
+<div>
+  <label for="product">Select Product:</label>
+  <select id="product">
+    <option value="1">coffee</option>
+    <option value="2">tea</option>
+    <option value="3">chocolate cake</option>
+    <option value="4">strawberry cake</option>
+    <option value="5">orange juice</option>
+  </select>
+</div>
+
+<div id="product-details">
+  <h3>Product Details</h3>
+  <p><strong>Name:</strong> <input type="text" id="product-name"></p>
+  <p><strong>Price:</strong> $<input type="number" id="product-price" step="0.01"></p>
+  <button id="save-btn">Save</button>
+</div>
+
+<script>
+// JavaScript code
+document.addEventListener("DOMContentLoaded", function() {
+  var products = JSON.parse(localStorage.getItem("products")) || [
+    { id: 1, name: "coffee", price: 2.90 },
+    { id: 2, name: "tea", price: 1.90 },
+    { id: 3, name: "chocolate cake", price: 3.90 },
+    { id: 4, name: "strawberry cake", price: 4.90 },
+    { id: 5, name: "orange juice", price: 2 }
+  ];
+
+  var select = document.getElementById("product");
+  var nameInput = document.getElementById("product-name");
+  var priceInput = document.getElementById("product-price");
+  var saveBtn = document.getElementById("save-btn");
+
+  select.addEventListener("change", function() {
+    var selectedProductId = select.value;
+    var selectedProduct = products.find(function(product) {
+      return product.id == selectedProductId;
+    });
+
+    if (selectedProduct) {
+      nameInput.value = selectedProduct.name;
+      priceInput.value = selectedProduct.price.toFixed(2);
+      document.getElementById("product-details").style.display = "block";
+      saveBtn.style.display = "block";
+    }
+  });
+
+  // Update the product details in the array when the inputs are changed
+  nameInput.addEventListener("input", function() {
+    enableSaveButton();
+  });
+
+  priceInput.addEventListener("input", function() {
+    enableSaveButton();
+  });
+
+  // Save the modified product details
+  saveBtn.addEventListener("click", function() {
+    var selectedProductId = select.value;
+    var selectedProduct = products.find(function(product) {
+      return product.id == selectedProductId;
+    });
+
+    if (selectedProduct) {
+      selectedProduct.name = nameInput.value;
+      selectedProduct.price = parseFloat(priceInput.value);
+      saveProductsToLocalStorage();
+      saveBtn.style.display = "none";
+    }
+  });
+
+  // Function to save products to local storage
+  function saveProductsToLocalStorage() {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+
+  // Enable the save button when inputs are modified
+  function enableSaveButton() {
+    saveBtn.style.display = "block";
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+

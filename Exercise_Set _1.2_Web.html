@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello!</title>
+<style>
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", sans-serif;
+  }
+  
+  table {
+    width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 2px solid lightgray;
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    background-color: green;
+    color: rgb(255, 255, 255);
+  }
+
+  /* Apply gray background color to every even row */
+  tr:nth-child(even) {
+    background-color: lightgray;
+  }
+
+  /* Apply white background color to every odd row */
+  tr:nth-child(odd) {
+    background-color: white;
+  }
+
+  /* Hover effect for rows */
+  tr:hover {
+    background-color: rgb(156, 59, 59); /* Change background color on hover */
+  }
+
+  /* Make all cells editable */
+  td {
+    cursor: pointer;
+  }
+
+  td:hover {
+    background-color: rgb(156, 59, 59);
+  }
+</style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Study unit</th>
+        <th>Credits</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td contenteditable="true">Seminar: Machine learning and Data Engineering</td>
+        <td contenteditable="true">5</td>
+        <td class="editable-grade" contenteditable="true">Pass</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Introduction to Programming</td>
+        <td contenteditable="true">10</td>
+        <td class="editable-grade" contenteditable="true">5</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Professional English for ICT Engineers 1</td>
+        <td contenteditable="true">5</td>
+        <td class="editable-grade" contenteditable="true">4</td>
+      </tr>
+      <tr>
+        <td contenteditable="true">Algebra, Geometry, Trigonometry</td>
+        <td contenteditable="true">5</td>
+        <td class="editable-grade" contenteditable="true">4</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

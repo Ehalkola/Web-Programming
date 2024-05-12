@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Game</title>
+<style>
+  #game-container {
+    text-align: center;
+  }
+
+  #question-container {
+    margin-bottom: 20px;
+  }
+
+  #result-container {
+    display: none;
+  }
+
+  #result-message {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div id="game-container">
+  <h2>Math Game</h2>
+
+  <div id="question-container">
+    <label for="answer">What is:</label>
+    <span id="num1"></span> + <span id="num2"></span> = ?
+    <input type="number" id="answer" required>
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result-message"></div>
+  </div>
+
+  <div id="result-container">
+    <h3>Results</h3>
+    <p id="correct-answers">Correct Answers: <span id="correct-count">0</span></p>
+    <p id="final-score">Final Score: <span id="score">0</span></p>
+  </div>
+</div>
+
+<script>
+var num1, num2, correctAnswers = 0;
+
+function generateQuestion() {
+  num1 = Math.floor(Math.random() * 10) + 1;
+  num2 = Math.floor(Math.random() * 10) + 1;
+  document.getElementById("num1").textContent = num1;
+  document.getElementById("num2").textContent = num2;
+}
+
+function checkAnswer() {
+  var answer = parseInt(document.getElementById("answer").value);
+  if (answer === num1 + num2) {
+    correctAnswers++;
+    document.getElementById("result-message").textContent = "Correct!";
+  } else {
+    document.getElementById("result-message").textContent = "Wrong! Try again.";
+  }
+  document.getElementById("answer").value = '';
+  if (correctAnswers < 5) {
+    generateQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById("question-container").style.display = "none";
+  document.getElementById("result-container").style.display = "block";
+  document.getElementById("correct-count").textContent = correctAnswers;
+  document.getElementById("score").textContent = correctAnswers + "/5";
+}
+
+window.onload = generateQuestion;
+</script>
+
+</body>
+</html>

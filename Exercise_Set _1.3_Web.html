@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Members</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    padding: 10px;
+  }
+
+  .team-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .team-section h1 {
+    margin-bottom: 20px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    max-width: 850px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border: 2px solid #070707;
+    padding: 0px;
+  }
+
+  .team-member {
+    width: 400px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #070707;
+  }
+
+  .member-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0px;
+  }
+
+  .member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .member-description {
+    font-size: 1em;
+    color: #777;
+  }
+
+  .container::before,
+  .container::after,
+  .team-member:not(:last-child) {
+    border-right: 0px solid #070707;
+  }
+</style>
+</head>
+<body>
+  <div class="team-section">
+    <h1>Team Members</h1>
+    <div class="container">
+      <div class="team-member">
+        <img src="hannah.jpeg" alt="Hannah" class="member-image">
+        <h2 class="member-name">Hannah</h2>
+        <p class="member-description">Software Engineer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="justin.jpeg" alt="Justin" class="member-image">
+        <h2 class="member-name">Justin</h2>
+        <p class="member-description">Graphic Designer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="kaisa.jfif" alt="Kaisa" class="member-image">
+        <h2 class="member-name">Kaisa</h2>
+        <p class="member-description">Marketing Specialist</p>
+      </div>
+
+      <div class="team-member">
+        <img src="mike.jfif" alt="Mike" class="member-image">
+        <h2 class="member-name">Mike</h2>
+        <p class="member-description">Project Manager</p>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

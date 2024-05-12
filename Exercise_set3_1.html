@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Array Content</title>
+<style>
+  /* CSS styles */
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<h2>Car brands:</h2>
+
+<ul id="array-content"></ul>
+
+<script>
+// JavaScript code
+document.addEventListener("DOMContentLoaded", function() {
+  var carBrands = ["Mercedes Benz", "Opel", "Saab", "Nissan", "Toyota"];
+
+  var ul = document.getElementById("array-content");
+  carBrands.forEach(function(brand) {
+    var li = document.createElement("li");
+    li.textContent = brand;
+    ul.appendChild(li);
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+

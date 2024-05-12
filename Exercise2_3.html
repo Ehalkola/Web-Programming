@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Expenses Calculator</title>
+</head>
+<body>
+
+<h2>Travel Expenses Calculator</h2>
+
+<form id="expensesForm">
+  <label for="kilometers">Kilometers traveled (own car):</label><br>
+  <input type="number" id="kilometers" name="kilometers" required><br><br>
+  
+  <label for="days">Number of days on work trip:</label><br>
+  <input type="number" id="days" name="days" required><br><br>
+  
+  <label for="country">Destination country:</label><br>
+  <select id="country" name="country" required>
+    <option value="Finland">Finland</option>
+    <option value="Sweden">Sweden</option>
+    <option value="Norway">Norway</option>
+  </select><br><br>
+  
+  <button type="button" onclick="calculateExpenses()">Calculate Expenses</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function calculateExpenses() {
+  var kilometers = parseFloat(document.getElementById("kilometers").value);
+  var days = parseInt(document.getElementById("days").value);
+  var country = document.getElementById("country").value;
+  var kilometersCost = kilometers * 0.50;
+  var dailyAllowance;
+  
+  switch(country) {
+    case "Finland":
+      dailyAllowance = 30;
+      break;
+    case "Sweden":
+      dailyAllowance = 40;
+      break;
+    case "Norway":
+      dailyAllowance = 50;
+      break;
+  }
+  
+  var totalExpenses = kilometersCost + (dailyAllowance * days);
+  
+  document.getElementById("result").innerHTML = "Total Expenses: " + totalExpenses.toFixed(2) + "€";
+}
+</script>
+
+</body>
+</html>

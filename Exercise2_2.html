@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petrol Consumption Calculator</title>
+</head>
+<body>
+
+<h2>Petrol Consumption Calculator</h2>
+
+<form id="petrolForm">
+  <label for="distance">Enter distance traveled (in kilometers):</label><br>
+  <input type="number" id="distance" name="distance" required><br><br>
+  <button type="button" onclick="calculatePetrolConsumption()">Calculate</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function calculatePetrolConsumption() {
+  var distance = parseFloat(document.getElementById("distance").value);
+  var fuelEfficiency = 7; // liters per 100 kilometers
+  
+  var petrolConsumption = (distance / 100) * fuelEfficiency;
+  
+  document.getElementById("result").innerHTML = "Petrol Consumption: " + petrolConsumption.toFixed(2) + " liters";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currency Calculator</title>
+</head>
+<body>
+
+<h2>Currency Calculator</h2>
+
+<div>
+  <select id="currencyFrom" onchange="calculateCurrency()">
+    <option value="EUR">€ - Euros</option>
+    <option value="USD">$ - Dollars</option>
+    <option value="GBP">£ - Pounds</option>
+  </select>
+  <input type="number" id="valueFrom" oninput="calculateCurrency()" placeholder="Enter value">
+</div>
+
+<div>
+  <select id="currencyTo" onchange="calculateCurrency()">
+    <option value="EUR">€ - Euros</option>
+    <option value="USD">$ - Dollars</option>
+    <option value="GBP">£ - Pounds</option>
+  </select>
+  <input type="number" id="valueTo" oninput="calculateCurrency()" placeholder="Enter value">
+</div>
+
+<script>
+function calculateCurrency() {
+  var currencyFrom = document.getElementById("currencyFrom").value;
+  var currencyTo = document.getElementById("currencyTo").value;
+  var valueFrom = parseFloat(document.getElementById("valueFrom").value);
+  var valueTo = parseFloat(document.getElementById("valueTo").value);
+
+  if (!isNaN(valueFrom) && isNaN(valueTo)) {
+    switch (currencyFrom) {
+      case "EUR":
+        if (currencyTo === "USD") {
+          valueTo = valueFrom * 0.9;
+        } else if (currencyTo === "GBP") {
+          valueTo = valueFrom * 1.2;
+        }
+        break;
+      case "USD":
+        if (currencyTo === "EUR") {
+          valueTo = valueFrom / 0.9;
+        } else if (currencyTo === "GBP") {
+          valueTo = (valueFrom / 0.9) * 1.2;
+        }
+        break;
+      case "GBP":
+        if (currencyTo === "EUR") {
+          valueTo = valueFrom / 1.2;
+        } else if (currencyTo === "USD") {
+          valueTo = (valueFrom / 1.2) * 0.9;
+        }
+        break;
+    }
+    document.getElementById("valueTo").value = valueTo.toFixed(2);
+  } else if (isNaN(valueFrom) && !isNaN(valueTo)) {
+    switch (currencyTo) {
+      case "EUR":
+        if (currencyFrom === "USD") {
+          valueFrom = valueTo / 0.9;
+        } else if (currencyFrom === "GBP") {
+          valueFrom = (valueTo / 1.2) * 0.9;
+        }
+        break;
+      case "USD":
+        if (currencyFrom === "EUR") {
+          valueFrom = valueTo * 0.9;
+        } else if (currencyFrom === "GBP") {
+          valueFrom = valueTo / 1.2;
+        }
+        break;
+      case "GBP":
+        if (currencyFrom === "EUR") {
+          valueFrom = valueTo * 1.2;
+        } else if (currencyFrom === "USD") {
+          valueFrom = (valueTo * 0.9) * 1.2;
+        }
+        break;
+    }
+    document.getElementById("valueFrom").value = valueFrom.toFixed(2);
+  }
+}
+</script>
+</body>
+</html>

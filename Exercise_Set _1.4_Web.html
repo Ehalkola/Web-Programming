@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Story</title>
+<style>
+  body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    text-align: center;
+    background-color: rgb(18, 55, 18); 
+    color: white;
+    padding: 20px;
+    font-size: 2em; 
+  }
+
+  section {
+    margin: 20px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .table-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+  }
+
+  .table-container > div {
+    width: 100%; /* Adjust width to take 100% of the container */
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  table {
+    width: 100%; /* Adjust width to take 100% of the table container */
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: rgb(18, 55, 18);
+    color: white;
+  }
+
+  footer {
+    background-color: rgb(18, 55, 18);
+    padding: 20px;
+    color: white;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+  }
+  li {
+    display: inline-block;
+    width: 30%; /* Adjust the width as needed */
+    margin-right: 20px;
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    width: 46%; 
+  }
+
+  .friend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white; 
+    border: 2px solid black;
+  }
+  
+  .friend-image {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 8px 0 0 8px; 
+    float: left; 
+    margin-right: 10px; 
+  }
+
+  .friend-intro {
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>My Story</h1>
+</header>
+
+<div class="table-container">
+  <div id="family">
+    <h2>About my family</h2>
+    <p>My family consists of 5 people: Tuulia (Partner), Mika (Father), Mervi (Mother), Anu (Step-Mom), Daimi (Dog), and Eemil (me).<br>
+      I live in Rovaniemi with my partner Tuulia, and my parents live in Teuva/Kauhajoki area in Southern-Osthrobotnia. I moved here a year ago
+      to be closer to Tuulia and in hopes to go to school here, which came true. My mother works as a psychiatric nurse in the Kauhajoki area, and my
+      step-mom works as a warehouse worker while Tuulia and I are students.
+    </p>
+  </div>
+  <div id="friends-introduction">
+    <h2>My Friends</h2>
+    <div class="friend">
+      <img src="mike.jfif" alt="Antti" class="friend-image">
+      <div class="friend-intro">
+        <strong>Antti:</strong> is one of my best and closest friends I have had since
+        primary school. He is a social butterfly who likes to do sports and enjoys life.
+        Currently, he is in the army, after the army, he is going to school in LUT-University and aims
+        to work in fields of Mechanical Engineering. 
+      </div>
+    </div>
+    <div class="friend" style="margin-left: auto">
+      <div class="friend-intro">
+        <strong>Koki:</strong> is one of my closest friends. Koki enjoys drawing and painting,
+        but also enjoys playing video games like Minecraft. Koki lives in Espoo and aims to become
+        an artist or designer of some sort.
+      </div>
+      <img src="justin.jpeg" alt="Koki" class="friend-image" style="margin-right: 10px;">
+    </div>
+  </div>
+</div>
+
+<section id="hobbies">
+  <h2>My Hobbies</h2>
+  <p>I am an active person who likes to go outdoors but also enjoys relaxing.
+    My hobbies include hiking, jogging, gym workouts, and video games.
+    During winter, I also enjoy skiing in nature and downhill skiing.
+  </p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Institution</th>
+        <th>Years</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lapland UAS</td>
+        <td>2023 - Present </td>
+        <td>Rovaniemi</td>
+      </tr>
+      <tr>
+        <td>Teuvan Lukio</td>
+        <td>2020 - 2023</td>
+        <td>Teuva</td>
+      </tr>
+      <tr>
+        <td>Teuvan Yhtenäiskoulu</td>
+        <td>2017 - 2020</td>
+        <td>Teuva</td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <h3>Relatives</h3>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Relation</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mervi Foxell</td>
+        <td>Mother</td>
+        <td>Teuva</td>
+      </tr>
+      <tr>
+        <td>Mika Halkola</td>
+        <td>Father</td>
+        <td>Kauhajoki</td>
+      </tr>
+      <tr>
+        <td>Tuulia Valkola</td>
+        <td>Partner</td>
+        <td>Rovaniemi</td>
+      </tr>
+      <tr>
+        <td>Anu Foxell</td>
+        <td>Step-Mom</td>
+        <td>Teuva</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Friends Table -->
+  <table>
+    <h3>Friends</h3>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Relation</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Antti</td>
+        <td>Friend</td>
+        <td>[City]</td>
+      </tr>
+      <tr>
+        <td>Koki</td>
+        <td>Friend</td>
+        <td>[City]</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="useful-links">
+  <h2>Useful Links</h2>
+  <ul>
+    <li><a href="https://about.me/halkola">About me</a></li>
+    <li><a href="https://www.linkedin.com/in/eemil-halkola-282110283/">Linkedin</a></li>
+  </ul>
+</section>
+
+<footer>
+  <h2>Contact Information</h2>
+  <address>
+    <ul>
+      <li>Name: John Doe</li>
+      <li>Email: johndoe@example.com</li>
+      <li>Phone: 555-123-4567</li>
+      <li>Address: 123 Street, City, Country</li>
+    </ul>
+  </address>
+</footer>
+
+</body>
+</html>

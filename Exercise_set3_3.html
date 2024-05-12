@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Array Content</title>
+<style>
+  /* CSS styles */
+  body {
+    font-family: "Times New Roman", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  table {
+    width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  th, td {
+    border: 2px solid lightgray;
+    padding: 10px;
+  }
+
+  th {
+    background-color: rgb(255, 254, 254);
+    color: rgb(0, 0, 0);
+  }
+
+  /* Apply white background color to every even row */
+  tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  /* Apply black background color to every odd row */
+  tbody tr:nth-child(odd) {
+    background-color: black;
+    color: white; /* Change text color to white for better contrast */
+  }
+</style>
+</head>
+<body>
+
+<h2>Our Crew Out01:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eemil Halkola</td>
+      <td>Data Analytics</td>
+      <td>Rovaniemi</td>
+    </tr>
+    <tr>
+      <td>Sergei Karagaz</td>
+      <td>Web Developer</td>
+      <td>Rovaniemi</td>
+    </tr>
+    <tr>
+      <td>Alla Tsymbalska</td>
+      <td>Designer</td>
+      <td>Rovaniemi</td>
+    </tr>
+    <tr>
+      <td>Petja Takalo</td>
+      <td>Data Analytics</td>
+      <td>Kittilä</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
+
+
+
+
+
